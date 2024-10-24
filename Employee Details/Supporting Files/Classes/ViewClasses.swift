@@ -11,7 +11,7 @@ class CurvedView: UIView{
     required init? (coder: NSCoder) {
         super.init(coder: coder)
         self.clipsToBounds = true
-        self.layer.cornerRadius = 28
+        self.layer.cornerRadius = 4
     }
 }
 

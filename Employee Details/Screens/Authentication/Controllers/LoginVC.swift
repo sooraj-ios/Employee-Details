@@ -27,6 +27,8 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func signinButtonAction(_ sender: UIButton) {
+        let nextVC = AppController.shared.employeesListing
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 
     @IBAction func registerButtonAction(_ sender: UIButton) {

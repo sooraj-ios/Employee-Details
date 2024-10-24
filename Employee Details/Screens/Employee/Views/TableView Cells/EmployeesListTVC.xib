@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeesListTVC_id" rowHeight="69" id="KGk-i7-Jjw" customClass="EmployeesListTVC" customModule="Employee_Details" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="601" height="69"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="601" height="69"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBa-VX-Ljf">
+                        <rect key="frame" x="24" y="7" width="553" height="49"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-kO-ctL">
+                                <rect key="frame" x="0.0" y="0.0" width="49" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="6V9-4v-GJt"/>
+                                    <constraint firstAttribute="height" constant="49" id="a4f-pq-XML"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="1qC-zf-Ccv">
+                                <rect key="frame" x="58" y="0.0" width="495" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Joy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Caf-vy-lpF">
+                                        <rect key="frame" x="0.0" y="0.0" width="495" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <color key="textColor" name="TextTitleDark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91 8412094567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSA-g7-gSW">
+                                        <rect key="frame" x="0.0" y="26" width="495" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" name="TextPrimaryMedium"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lEp-kO-ctL" firstAttribute="leading" secondItem="YBa-VX-Ljf" secondAttribute="leading" id="1qE-wC-xS8"/>
+                            <constraint firstItem="lEp-kO-ctL" firstAttribute="centerY" secondItem="YBa-VX-Ljf" secondAttribute="centerY" id="AX8-m9-tJg"/>
+                            <constraint firstAttribute="bottom" secondItem="1qC-zf-Ccv" secondAttribute="bottom" id="BbP-fw-UUj"/>
+                            <constraint firstItem="1qC-zf-Ccv" firstAttribute="leading" secondItem="lEp-kO-ctL" secondAttribute="trailing" constant="9" id="JwV-Fl-MKa"/>
+                            <constraint firstAttribute="trailing" secondItem="1qC-zf-Ccv" secondAttribute="trailing" id="S0M-Rg-vFi"/>
+                            <constraint firstItem="1qC-zf-Ccv" firstAttribute="top" secondItem="YBa-VX-Ljf" secondAttribute="top" id="nFX-EL-KEp"/>
+                            <constraint firstAttribute="height" constant="49" id="xCp-R0-PwC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="YBa-VX-Ljf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="W8Y-lt-Hse"/>
+                    <constraint firstItem="YBa-VX-Ljf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="blK-ou-Y4H"/>
+                    <constraint firstAttribute="trailing" secondItem="YBa-VX-Ljf" secondAttribute="trailing" constant="24" id="lwA-a5-4tT"/>
+                    <constraint firstAttribute="bottom" secondItem="YBa-VX-Ljf" secondAttribute="bottom" constant="7" id="v5t-ba-Hwh"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="344.27480916030532" y="-2.4647887323943665"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profile_placeholder" width="49" height="49"/>
+        <namedColor name="TextPrimaryMedium">
+            <color red="0.16470588235294117" green="0.32156862745098042" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextTitleDark">
+            <color red="0.094117647058823528" green="0.19607843137254902" blue="0.29411764705882354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
