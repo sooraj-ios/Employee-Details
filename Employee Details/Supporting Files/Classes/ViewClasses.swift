@@ -15,6 +15,16 @@ class CurvedView: UIView{
     }
 }
 
+class CurvedBorderView: UIView{
+    required init? (coder: NSCoder) {
+        super.init(coder: coder)
+        self.clipsToBounds = true
+        self.layer.cornerRadius = 12
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(named: "BackgroundViewHighlight")?.cgColor
+    }
+}
+
 class CurvedShadowView: UIView{
     required init? (coder: NSCoder) {
         super.init(coder: coder)

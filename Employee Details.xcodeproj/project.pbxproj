@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		71370CC62CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71370CC52CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift */; };
+		714EF1182CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */; };
+		714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF1192CCA5926000907AA /* PaymentsTVC.swift */; };
+		714EF11C2CCA5926000907AA /* PaymentsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714EF11A2CCA5926000907AA /* PaymentsTVC.xib */; };
+		714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */; };
+		714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11F2CCA663E000907AA /* AddPaymentVC.swift */; };
 		71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */; };
 		71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */; };
 		71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF42CCA07C600C82BAE /* LoginVC.swift */; };
@@ -29,6 +34,11 @@
 		09835A370A465CEEFBB3D643 /* Pods-Employee Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Details.release.xcconfig"; path = "Target Support Files/Pods-Employee Details/Pods-Employee Details.release.xcconfig"; sourceTree = "<group>"; };
 		13383E71B1E2E28E8E8DC578 /* Pods_Employee_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71370CC52CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeContactDetailsVC.swift; sourceTree = "<group>"; };
+		714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeSalarySchemeVC.swift; sourceTree = "<group>"; };
+		714EF1192CCA5926000907AA /* PaymentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsTVC.swift; sourceTree = "<group>"; };
+		714EF11A2CCA5926000907AA /* PaymentsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsTVC.xib; sourceTree = "<group>"; };
+		714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
+		714EF11F2CCA663E000907AA /* AddPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentVC.swift; sourceTree = "<group>"; };
 		71CDEAED2CCA07C600C82BAE /* Employee Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -200,6 +210,9 @@
 				71CDEB1C2CCA2A7B00C82BAE /* EmployeesListingVC.swift */,
 				71CDEB232CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift */,
 				71370CC52CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift */,
+				714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */,
+				714EF11F2CCA663E000907AA /* AddPaymentVC.swift */,
+				714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,6 +222,8 @@
 			children = (
 				71CDEB1F2CCA2C4B00C82BAE /* EmployeesListTVC.swift */,
 				71CDEB202CCA2C4B00C82BAE /* EmployeesListTVC.xib */,
+				714EF1192CCA5926000907AA /* PaymentsTVC.swift */,
+				714EF11A2CCA5926000907AA /* PaymentsTVC.xib */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -292,6 +307,7 @@
 			files = (
 				71CDEAFA2CCA07C800C82BAE /* Assets.xcassets in Resources */,
 				71CDEB222CCA2C4B00C82BAE /* EmployeesListTVC.xib in Resources */,
+				714EF11C2CCA5926000907AA /* PaymentsTVC.xib in Resources */,
 				71CDEAF82CCA07C600C82BAE /* Base in Resources */,
 				71CDEB1B2CCA2A0300C82BAE /* Employee.storyboard in Resources */,
 			);
@@ -351,7 +367,11 @@
 				71CDEB242CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift in Sources */,
 				71370CC62CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift in Sources */,
 				71CDEB0D2CCA108F00C82BAE /* ViewClasses.swift in Sources */,
+				714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */,
+				714EF1182CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift in Sources */,
 				71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */,
+				714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */,
+				714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */,
 				71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
 				71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */,

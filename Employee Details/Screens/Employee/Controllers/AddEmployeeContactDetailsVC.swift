@@ -21,7 +21,7 @@ class AddEmployeeContactDetailsVC: UIViewController {
      }
 
     @IBAction func nextAction(_ sender: UIButton) {
-//        let nextVC = AppController.shared.addEmployeeContactDetails
-//        self.navigationController?.pushViewController(nextVC, animated: true)
+        let nextVC = AppController.shared.addEmployeeSalaryScheme
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

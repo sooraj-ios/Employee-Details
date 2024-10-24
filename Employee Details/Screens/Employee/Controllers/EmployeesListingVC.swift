@@ -45,4 +45,9 @@ class EmployeesListingVC: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeesListTVC_id") as! EmployeesListTVC
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let nextVC = AppController.shared.employeeDetails
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
 }
