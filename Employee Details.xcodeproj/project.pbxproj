@@ -12,6 +12,10 @@
 		71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF42CCA07C600C82BAE /* LoginVC.swift */; };
 		71CDEAF82CCA07C600C82BAE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 71CDEAF72CCA07C600C82BAE /* Base */; };
 		71CDEAFA2CCA07C800C82BAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDEAF92CCA07C800C82BAE /* Assets.xcassets */; };
+		71CDEB0D2CCA108F00C82BAE /* ViewClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB0C2CCA108F00C82BAE /* ViewClasses.swift */; };
+		71CDEB0F2CCA176400C82BAE /* ButtonClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB0E2CCA176400C82BAE /* ButtonClasses.swift */; };
+		71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB102CCA1A3700C82BAE /* RegisterVC.swift */; };
+		71CDEB142CCA1D0E00C82BAE /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB132CCA1D0E00C82BAE /* AppController.swift */; };
 		869E17513F2CC476BAF9D552 /* Pods_Employee_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13383E71B1E2E28E8E8DC578 /* Pods_Employee_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +29,10 @@
 		71CDEAF72CCA07C600C82BAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentication.storyboard; sourceTree = "<group>"; };
 		71CDEAF92CCA07C800C82BAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71CDEAFE2CCA07C800C82BAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71CDEB0C2CCA108F00C82BAE /* ViewClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewClasses.swift; sourceTree = "<group>"; };
+		71CDEB0E2CCA176400C82BAE /* ButtonClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonClasses.swift; sourceTree = "<group>"; };
+		71CDEB102CCA1A3700C82BAE /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		71CDEB132CCA1D0E00C82BAE /* AppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		F7B3476715DD7C37552A1F18 /* Pods-Employee Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Details.debug.xcconfig"; path = "Target Support Files/Pods-Employee Details/Pods-Employee Details.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,7 +78,9 @@
 		71CDEB042CCA081900C82BAE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				71CDEB0B2CCA106900C82BAE /* Classes */,
 				71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */,
+				71CDEB132CCA1D0E00C82BAE /* AppController.swift */,
 				71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */,
 				71CDEAF92CCA07C800C82BAE /* Assets.xcassets */,
 				71CDEAFE2CCA07C800C82BAE /* Info.plist */,
@@ -123,8 +133,18 @@
 			isa = PBXGroup;
 			children = (
 				71CDEAF42CCA07C600C82BAE /* LoginVC.swift */,
+				71CDEB102CCA1A3700C82BAE /* RegisterVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		71CDEB0B2CCA106900C82BAE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				71CDEB0C2CCA108F00C82BAE /* ViewClasses.swift */,
+				71CDEB0E2CCA176400C82BAE /* ButtonClasses.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		CFCB33BE5589F23605CCEE07 /* Frameworks */ = {
@@ -259,8 +279,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */,
+				71CDEB0D2CCA108F00C82BAE /* ViewClasses.swift in Sources */,
 				71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */,
+				71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
+				71CDEB0F2CCA176400C82BAE /* ButtonClasses.swift in Sources */,
+				71CDEB142CCA1D0E00C82BAE /* AppController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
