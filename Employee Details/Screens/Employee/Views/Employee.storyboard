@@ -228,13 +228,24 @@
                                                                     <constraint firstAttribute="height" constant="44" id="ohk-AK-Ga0"/>
                                                                 </constraints>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RpS-kr-bYx">
+                                                                <rect key="frame" x="202" y="87" width="44" height="44"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="editImageAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="kEQ-FX-Grl"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="vUd-az-EIW" firstAttribute="bottom" secondItem="YVR-NW-RrF" secondAttribute="bottom" id="9vz-nu-Cmu"/>
+                                                            <constraint firstItem="RpS-kr-bYx" firstAttribute="centerX" secondItem="vUd-az-EIW" secondAttribute="centerX" id="ASC-AB-r9M"/>
                                                             <constraint firstItem="YVR-NW-RrF" firstAttribute="centerX" secondItem="cru-xm-ELX" secondAttribute="centerX" id="OHT-Nz-nLe"/>
                                                             <constraint firstItem="vUd-az-EIW" firstAttribute="trailing" secondItem="YVR-NW-RrF" secondAttribute="trailing" id="S49-LP-nWZ"/>
+                                                            <constraint firstItem="RpS-kr-bYx" firstAttribute="centerY" secondItem="vUd-az-EIW" secondAttribute="centerY" id="Z04-cZ-ZuF"/>
                                                             <constraint firstItem="YVR-NW-RrF" firstAttribute="top" secondItem="cru-xm-ELX" secondAttribute="top" id="e2X-i5-U73"/>
                                                             <constraint firstAttribute="bottom" secondItem="YVR-NW-RrF" secondAttribute="bottom" id="f79-gQ-qVg"/>
+                                                            <constraint firstItem="RpS-kr-bYx" firstAttribute="width" secondItem="vUd-az-EIW" secondAttribute="width" id="nJz-Pf-vdc"/>
+                                                            <constraint firstItem="RpS-kr-bYx" firstAttribute="height" secondItem="vUd-az-EIW" secondAttribute="height" id="oDU-JN-oAx"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RBi-uy-wr1">
@@ -465,6 +476,14 @@
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLQ-yO-qQ2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="361" height="102"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <connections>
+                                                                    <action selector="fileViewAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="YKD-GX-Ecw"/>
+                                                                    <action selector="uploadFileAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="AOS-fM-OlW"/>
+                                                                </connections>
+                                                            </button>
                                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQe-T1-8yK" customClass="CurvedView" customModule="Employee_Details" customModuleProvider="target">
                                                                 <rect key="frame" x="287" y="33.666666666666742" width="50" height="35"/>
                                                                 <subviews>
@@ -474,13 +493,24 @@
                                                                         <color key="textColor" name="TextHighlight"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HjH-at-gy4">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="fileViewAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="mWW-GV-8D2"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="BackgroundViewSecondary"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="50" id="56e-cR-s7S"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="HjH-at-gy4" secondAttribute="trailing" id="6NE-ZA-1vx"/>
+                                                                    <constraint firstItem="HjH-at-gy4" firstAttribute="top" secondItem="FQe-T1-8yK" secondAttribute="top" id="8Oi-wl-wjH"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="HjH-at-gy4" secondAttribute="bottom" id="G9p-1d-3SQ"/>
                                                                     <constraint firstAttribute="height" constant="35" id="HWH-Ej-qir"/>
                                                                     <constraint firstItem="c7q-6z-NWd" firstAttribute="leading" secondItem="FQe-T1-8yK" secondAttribute="leading" id="TMH-CC-pMR"/>
                                                                     <constraint firstAttribute="bottom" secondItem="c7q-6z-NWd" secondAttribute="bottom" id="heh-2C-vjf"/>
+                                                                    <constraint firstItem="HjH-at-gy4" firstAttribute="leading" secondItem="FQe-T1-8yK" secondAttribute="leading" id="pSX-ff-0Vz"/>
                                                                     <constraint firstAttribute="trailing" secondItem="c7q-6z-NWd" secondAttribute="trailing" id="sQ9-Ma-AyX"/>
                                                                     <constraint firstItem="c7q-6z-NWd" firstAttribute="top" secondItem="FQe-T1-8yK" secondAttribute="top" id="thY-7X-jZm"/>
                                                                 </constraints>
@@ -489,14 +519,18 @@
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstItem="WuG-GM-gd4" firstAttribute="top" secondItem="iuM-Wl-vEu" secondAttribute="top" constant="24" id="6md-KP-9Gs"/>
+                                                            <constraint firstItem="BLQ-yO-qQ2" firstAttribute="leading" secondItem="iuM-Wl-vEu" secondAttribute="leading" id="DLH-Oa-n49"/>
                                                             <constraint firstItem="hjf-Sf-DVM" firstAttribute="leading" secondItem="WuG-GM-gd4" secondAttribute="trailing" id="G1E-j3-E5G"/>
                                                             <constraint firstItem="WuG-GM-gd4" firstAttribute="leading" secondItem="iuM-Wl-vEu" secondAttribute="leading" constant="24" id="KWk-hN-cJ5"/>
                                                             <constraint firstItem="FQe-T1-8yK" firstAttribute="centerY" secondItem="hjf-Sf-DVM" secondAttribute="centerY" id="UkI-0P-78n"/>
                                                             <constraint firstAttribute="trailing" secondItem="hjf-Sf-DVM" secondAttribute="trailing" constant="16" id="WB0-P6-hdj"/>
+                                                            <constraint firstAttribute="bottom" secondItem="BLQ-yO-qQ2" secondAttribute="bottom" id="Zsk-L3-eBf"/>
                                                             <constraint firstAttribute="height" constant="102" id="chg-WG-4CP"/>
+                                                            <constraint firstItem="BLQ-yO-qQ2" firstAttribute="top" secondItem="iuM-Wl-vEu" secondAttribute="top" id="du9-aG-KHr"/>
                                                             <constraint firstItem="hjf-Sf-DVM" firstAttribute="centerY" secondItem="WuG-GM-gd4" secondAttribute="centerY" id="foM-S3-g40"/>
                                                             <constraint firstAttribute="trailing" secondItem="FQe-T1-8yK" secondAttribute="trailing" constant="24" id="gek-aK-0M9"/>
                                                             <constraint firstAttribute="bottom" secondItem="WuG-GM-gd4" secondAttribute="bottom" constant="24" id="ieH-B1-Cbb"/>
+                                                            <constraint firstAttribute="trailing" secondItem="BLQ-yO-qQ2" secondAttribute="trailing" id="z3n-ct-KUc"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IQN-0f-jF4">
@@ -558,6 +592,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mW8-h2-ME9"/>
+                    <connections>
+                        <outlet property="dateOfBirthField" destination="T7r-08-I1O" id="cIg-Jx-hDq"/>
+                        <outlet property="designationField" destination="bdG-nZ-4bi" id="hR8-29-dUx"/>
+                        <outlet property="firstNameField" destination="JKd-Qk-xst" id="VAA-rG-EnU"/>
+                        <outlet property="genderField" destination="mlh-HU-3W1" id="dCh-Kl-JG7"/>
+                        <outlet property="importedFileView" destination="FQe-T1-8yK" id="xiH-l8-Epl"/>
+                        <outlet property="lastNameField" destination="mzN-uB-rxZ" id="qu5-4G-3xN"/>
+                        <outlet property="profileImageView" destination="YVR-NW-RrF" id="CVS-OS-w7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPO-YK-QEh" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +726,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mobile Number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="837-Jv-Ptm">
                                                                         <rect key="frame" x="16" y="0.0" width="329" height="54"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -712,7 +755,7 @@
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Mail Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9VX-Z3-eH7">
                                                                         <rect key="frame" x="16" y="0.0" width="329" height="54"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                     </textField>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -816,6 +859,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v2l-9T-vyM"/>
+                    <connections>
+                        <outlet property="addressTextView" destination="omF-Rd-fb5" id="2fQ-Ka-wEf"/>
+                        <outlet property="emailField" destination="9VX-Z3-eH7" id="q9V-Cc-fES"/>
+                        <outlet property="numberField" destination="837-Jv-Ptm" id="iPV-OZ-5wX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70N-A8-F5m" sceneMemberID="firstResponder"/>
             </objects>
@@ -938,7 +986,7 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0gj-tu-VG9">
                                                                 <rect key="frame" x="0.0" y="29.333333333333343" width="361" height="41"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2I-yg-cKT">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2I-yg-cKT" customClass="BorderButton" customModule="Employee_Details" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="115" height="41"/>
                                                                         <color key="backgroundColor" name="BackgroundViewHighlight"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -946,22 +994,31 @@
                                                                         <state key="normal" title="3 Months">
                                                                             <color key="titleColor" name="TextHighlight"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="contractPeriodButton:" destination="rZE-Cp-MCP" eventType="touchUpInside" id="vjf-wa-cL7"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-Bf-W9m">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGa-Bf-W9m" customClass="BorderButton" customModule="Employee_Details" customModuleProvider="target">
                                                                         <rect key="frame" x="123" y="0.0" width="115" height="41"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="6 Months">
-                                                                            <color key="titleColor" name="TextHighlight"/>
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="contractPeriodButton:" destination="rZE-Cp-MCP" eventType="touchUpInside" id="2t8-Gg-duA"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcA-Jb-fLr">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcA-Jb-fLr" customClass="BorderButton" customModule="Employee_Details" customModuleProvider="target">
                                                                         <rect key="frame" x="246" y="0.0" width="115" height="41"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" title="12 Months">
-                                                                            <color key="titleColor" name="TextHighlight"/>
+                                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
+                                                                        <connections>
+                                                                            <action selector="contractPeriodButton:" destination="rZE-Cp-MCP" eventType="touchUpInside" id="aBR-pG-CQ0"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <constraints>
@@ -1059,7 +1116,7 @@
                                                         <rect key="frame" x="0.0" y="400.33333333333337" width="361" height="25"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XDG-lR-Ijg">
-                                                                <rect key="frame" x="21" y="0.0" width="319.33333333333337" height="25"/>
+                                                                <rect key="frame" x="21" y="0.0" width="319.33333333333331" height="25"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d43-6n-tgs">
                                                                         <rect key="frame" x="0.0" y="0.0" width="69.333333333333329" height="25"/>
@@ -1155,8 +1212,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="N6Y-Xl-LDQ"/>
                     <connections>
+                        <outlet property="months12Button" destination="VcA-Jb-fLr" id="Ogn-a6-9IU"/>
+                        <outlet property="months3Button" destination="H2I-yg-cKT" id="RMo-bl-Fwl"/>
+                        <outlet property="months6Button" destination="IGa-Bf-W9m" id="vze-tD-1yQ"/>
                         <outlet property="paymentsTableView" destination="KzK-e9-wGj" id="jHW-wg-101"/>
                         <outlet property="paymentsTableViewHeight" destination="gdF-hv-MTS" id="Dgq-bm-gkH"/>
+                        <outlet property="remainingMonths" destination="sIK-W5-Uzz" id="McV-7w-dl3"/>
+                        <outlet property="remainingPercentage" destination="Sx6-Yr-cyB" id="Hlf-j0-YXy"/>
+                        <outlet property="remainingSalary" destination="IB8-Dd-KeB" id="hoP-gb-ePA"/>
+                        <outlet property="salarySlider" destination="VPA-sd-wlK" id="fky-KV-7Ga"/>
+                        <outlet property="totalSalaryLbl" destination="p7z-uQ-VE5" id="h0G-sV-5hY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqZ-FX-K4x" sceneMemberID="firstResponder"/>
@@ -1405,6 +1470,14 @@
                                                                         <color key="textColor" name="TextHighlight"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kje-f7-HVT">
+                                                                        <rect key="frame" x="-13" y="-0.66666666666662877" width="75" height="35"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="viewFileAction:" destination="nnH-1k-O9l" eventType="touchUpInside" id="uQY-Yf-sOe"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" name="BackgroundViewSecondary"/>
                                                                 <constraints>
@@ -1523,8 +1596,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="6vP-Pw-IF8"/>
                     <connections>
+                        <outlet property="addressLbl" destination="rIu-cW-Kh4" id="tBx-Uu-o58"/>
+                        <outlet property="dateLbl" destination="EsJ-Ig-HDS" id="Nmm-Ay-kHp"/>
+                        <outlet property="emailLbl" destination="1q2-7e-mbb" id="31a-dx-CaE"/>
+                        <outlet property="fileNameLbl" destination="dGh-oM-kyf" id="29P-fL-Dsl"/>
+                        <outlet property="fileUpdateLbl" destination="4JM-Pa-YBk" id="w4E-bC-cIp"/>
+                        <outlet property="genderLbl" destination="VSk-j7-g7g" id="2f9-fm-KXq"/>
+                        <outlet property="nameLbl" destination="Cun-T5-Z1u" id="wK0-5W-Pyk"/>
+                        <outlet property="numberLbl" destination="zVX-km-USd" id="zoM-rD-Ki7"/>
                         <outlet property="paymentsTableView" destination="QzL-1z-5TJ" id="Rcd-hL-U16"/>
                         <outlet property="paymentsTableViewHeight" destination="sRU-q5-Ui4" id="1pR-VY-lJS"/>
+                        <outlet property="profileImageLbl" destination="lkH-TU-2I1" id="lOj-9O-vCJ"/>
+                        <outlet property="roleLbl" destination="Uyj-qO-nKu" id="4VP-EM-9HY"/>
+                        <outlet property="salaryAmountLbl" destination="ZkB-kz-rvT" id="DMB-19-Iac"/>
+                        <outlet property="salarySchemeMonths" destination="Gy4-uA-M3W" id="DQt-vx-K8h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34i-1b-kyP" sceneMemberID="firstResponder"/>
@@ -1683,6 +1768,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LeY-dD-cW1"/>
+                    <connections>
+                        <outlet property="amountPercentageField" destination="avi-RQ-erL" id="eOz-6u-Jnk"/>
+                        <outlet property="dateField" destination="h7X-BS-afS" id="75E-ho-gQD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1B-Ox-rTS" sceneMemberID="firstResponder"/>
             </objects>

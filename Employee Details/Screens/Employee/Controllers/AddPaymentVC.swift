@@ -8,7 +8,10 @@
 import UIKit
 
 class AddPaymentVC: UIViewController {
-
+    // MARK: - IBOUTLETS
+    @IBOutlet weak var dateField: UITextField!
+    @IBOutlet weak var amountPercentageField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

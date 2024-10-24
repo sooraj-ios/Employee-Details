@@ -11,7 +11,19 @@ class EmployeeDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     // MARK: - IBOUTLETS
     @IBOutlet weak var paymentsTableView: UITableView!
     @IBOutlet weak var paymentsTableViewHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var profileImageLbl: UIImageView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var roleLbl: UILabel!
+    @IBOutlet weak var numberLbl: UILabel!
+    @IBOutlet weak var emailLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var genderLbl: UILabel!
+    @IBOutlet weak var addressLbl: UILabel!
+    @IBOutlet weak var fileNameLbl: UILabel!
+    @IBOutlet weak var fileUpdateLbl: UILabel!
+    @IBOutlet weak var salarySchemeMonths: UILabel!
+    @IBOutlet weak var salaryAmountLbl: UILabel!
+    
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +42,9 @@ class EmployeeDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataS
          self.navigationController?.popViewController(animated: true)
      }
 
+    @IBAction func viewFileAction(_ sender: UIButton) {
+    }
+    
     // MARK: - TABLE VIEW
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

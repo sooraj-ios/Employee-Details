@@ -8,7 +8,11 @@
 import UIKit
 
 class AddEmployeeContactDetailsVC: UIViewController {
-
+    // MARK: - IBOUTLETS
+    @IBOutlet weak var numberField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var addressTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
