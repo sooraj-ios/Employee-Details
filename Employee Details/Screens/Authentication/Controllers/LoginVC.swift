@@ -22,6 +22,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        bindViewModel()
     }
 
     func configureView(){
@@ -37,8 +38,7 @@ class LoginVC: UIViewController {
     }
 
     @IBAction func signinButtonAction(_ sender: UIButton) {
-        let nextVC = AppController.shared.employeesListing
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        viewModel.signIn(email: emailField.text ?? "", password: passwordField.text ?? "")
     }
 
     @IBAction func registerButtonAction(_ sender: UIButton) {
@@ -50,9 +50,11 @@ class LoginVC: UIViewController {
     @objc func typing(_ sender: UITextField){
         checkValidations()
     }
+
     func checkValidations(){
-        _ = emailField.text ?? "" != "" && passwordField.text ?? "" != "" ? signinButton.setAsEnabled() : signinButton.setAsDisabled()
+        _ = (emailField.text ?? "").isValidEmail() && (passwordField.text ?? "").isvalidPassword() ? signinButton.setAsEnabled() : signinButton.setAsDisabled()
     }
+
     func bindViewModel() {
         viewModel.isLoadingData.bind { [weak self] isLoading in
             guard let isLoading = isLoading else {
@@ -74,16 +76,15 @@ class LoginVC: UIViewController {
             AppToastView.shared.showToast(message: message, toastType: .error)
         }
 
-    }
-
-    func makeRequest() {
-        do {
-            _ = try ValidationService.validate(email: emailField.text)
-            viewModel.signIn(email: emailField.text ?? "", password: passwordField.text ?? "")
-        } catch {
-            print(error.localizedDescription)
-            AppToastView.shared.showToast(message: error.localizedDescription,toastType: .warning)
+        viewModel.token.bind { token in
+            guard let token = token else {
+                return
+            }
+            AppUserData.shared.token = token
+            let nextVC = AppController.shared.employeesListing
+            self.navigationController?.pushViewController(nextVC, animated: true)
         }
+
     }
 }
 

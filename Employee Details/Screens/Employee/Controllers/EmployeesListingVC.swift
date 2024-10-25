@@ -10,20 +10,61 @@ import UIKit
 class EmployeesListingVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK: - IBOUTLETS
     @IBOutlet weak var employeeListingTableView: UITableView!
+    @IBOutlet weak var noDataLbl: UILabel!
 
     // MARK: - CONSTANTS AND VARIABLES
+    var viewModel: EmployeesListingVM = EmployeesListingVM()
+    let activityIndicator = ActivityIndicator()
     var employeesArray:[String] = []
 
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        bindViewModel()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.getEmployees(page: 1)
     }
 
     func configureView(){
         employeeListingTableView.delegate = self
         employeeListingTableView.dataSource = self
         employeeListingTableView.register(UINib(nibName: "EmployeesListTVC", bundle: nil), forCellReuseIdentifier: "EmployeesListTVC_id")
+    }
+
+    func bindViewModel() {
+        viewModel.isLoadingData.bind { [weak self] isLoading in
+            guard let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.show()
+                } else {
+                    self?.activityIndicator.hide()
+                }
+            }
+        }
+
+        viewModel.showError.bind { message in
+            guard let message = message else {
+                return
+            }
+            AppToastView.shared.showToast(message: message, toastType: .error)
+        }
+
+        viewModel.employees.bind { employees in
+            guard let employees = employees else {
+                return
+            }
+            self.employeesArray = employees.data ?? []
+            self.employeeListingTableView.reloadData()
+            self.noDataLbl.isHidden = !(employees.data?.isEmpty ?? false)
+        }
+
     }
 
     // MARK: - BUTTON ACTIONS
@@ -38,7 +79,7 @@ class EmployeesListingVC: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10//employeesArray.count
+        return employeesArray.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

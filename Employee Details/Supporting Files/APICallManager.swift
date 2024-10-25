@@ -18,7 +18,7 @@ class APICallManager {
 
     static let shared = APICallManager()
 
-    func performAPIRequest<T: Decodable>(method: HTTPMethod, apiURL: String, parameters: [[String: Any]]? = nil, headers: [String: String]? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+    func performAPIRequest<T: Decodable>(method: HTTPMethod, apiURL: String, parameters: [[String: Any]]? = nil, isMultipart: Bool = false, headers: [String: String]? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: apiURL) else {
             let urlError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
             completion(.failure(urlError))
@@ -72,12 +72,28 @@ class APICallManager {
                 return
             }
 
-            do {
-                let decodedResponse = try JSONDecoder().decode(responseType, from: data)
-                completion(.success(decodedResponse))
-            } catch let decodingError {
-                completion(.failure(decodingError))
-            }
+//            if let responseCode = response as? HTTPURLResponse {
+//                if responseCode.statusCode != 200{
+//                    do {
+//                        let decodedResponse = try JSONDecoder().decode(ErrorModel.self, from: data)
+//                        let error = APIError.responseError(decodedResponse.error)
+//                        completion(.failure(error))
+//                        return
+//                    } catch let decodingError {
+//                        completion(.failure(decodingError))
+//                    }
+//                }else{
+//
+//                }
+//            }
+
+                do {
+                    let decodedResponse = try JSONDecoder().decode(responseType, from: data)
+                    completion(.success(decodedResponse))
+                } catch let decodingError {
+                    completion(.failure(decodingError))
+                    return
+                }
         }
         task.resume()
     }

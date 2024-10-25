@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		71370CC62CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71370CC52CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift */; };
+		713B6C802CCB760F00465A6C /* AppUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B6C7F2CCB760F00465A6C /* AppUserData.swift */; };
+		713B6C842CCB7C1400465A6C /* EmployeesListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B6C832CCB7C1400465A6C /* EmployeesListingVM.swift */; };
+		713B6C862CCB7CA000465A6C /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B6C852CCB7CA000465A6C /* EmployeeModel.swift */; };
+		713B6C882CCB853100465A6C /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B6C872CCB853100465A6C /* RegisterVM.swift */; };
+		713B6C8A2CCB89B100465A6C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713B6C892CCB89B100465A6C /* RegisterModel.swift */; };
 		714EF1182CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */; };
 		714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF1192CCA5926000907AA /* PaymentsTVC.swift */; };
 		714EF11C2CCA5926000907AA /* PaymentsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714EF11A2CCA5926000907AA /* PaymentsTVC.xib */; };
@@ -15,6 +20,8 @@
 		714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11F2CCA663E000907AA /* AddPaymentVC.swift */; };
 		71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CD2CCB54F000F87553 /* LoginVM.swift */; };
 		71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CF2CCB55B900F87553 /* Observable.swift */; };
+		71AFA8D22CCB5C2C00F87553 /* APIsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8D12CCB5C2C00F87553 /* APIsList.swift */; };
+		71AFA8D42CCB619A00F87553 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8D32CCB619A00F87553 /* LoginModel.swift */; };
 		71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */; };
 		71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */; };
 		71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF42CCA07C600C82BAE /* LoginVC.swift */; };
@@ -42,6 +49,11 @@
 		09835A370A465CEEFBB3D643 /* Pods-Employee Details.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Details.release.xcconfig"; path = "Target Support Files/Pods-Employee Details/Pods-Employee Details.release.xcconfig"; sourceTree = "<group>"; };
 		13383E71B1E2E28E8E8DC578 /* Pods_Employee_Details.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Employee_Details.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71370CC52CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeContactDetailsVC.swift; sourceTree = "<group>"; };
+		713B6C7F2CCB760F00465A6C /* AppUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUserData.swift; sourceTree = "<group>"; };
+		713B6C832CCB7C1400465A6C /* EmployeesListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListingVM.swift; sourceTree = "<group>"; };
+		713B6C852CCB7CA000465A6C /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
+		713B6C872CCB853100465A6C /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		713B6C892CCB89B100465A6C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeSalarySchemeVC.swift; sourceTree = "<group>"; };
 		714EF1192CCA5926000907AA /* PaymentsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsTVC.swift; sourceTree = "<group>"; };
 		714EF11A2CCA5926000907AA /* PaymentsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsTVC.xib; sourceTree = "<group>"; };
@@ -49,6 +61,8 @@
 		714EF11F2CCA663E000907AA /* AddPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentVC.swift; sourceTree = "<group>"; };
 		71AFA8CD2CCB54F000F87553 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		71AFA8CF2CCB55B900F87553 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		71AFA8D12CCB5C2C00F87553 /* APIsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsList.swift; sourceTree = "<group>"; };
+		71AFA8D32CCB619A00F87553 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		71CDEAED2CCA07C600C82BAE /* Employee Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +133,7 @@
 				71CDEB0B2CCA106900C82BAE /* Classes */,
 				71FBAC7C2CCB493E00625850 /* Extensions */,
 				71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */,
+				71AFA8D12CCB5C2C00F87553 /* APIsList.swift */,
 				71CDEB132CCA1D0E00C82BAE /* AppController.swift */,
 				71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */,
 				71FBAC722CCB451100625850 /* AppToastView.swift */,
@@ -127,6 +142,7 @@
 				71FBAC782CCB47E200625850 /* Network.swift */,
 				71FBAC7A2CCB485400625850 /* ValidationService.swift */,
 				71AFA8CF2CCB55B900F87553 /* Observable.swift */,
+				713B6C7F2CCB760F00465A6C /* AppUserData.swift */,
 				71CDEAF92CCA07C800C82BAE /* Assets.xcassets */,
 				71CDEAFE2CCA07C800C82BAE /* Info.plist */,
 			);
@@ -156,6 +172,8 @@
 		71CDEB072CCA085600C82BAE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71AFA8D32CCB619A00F87553 /* LoginModel.swift */,
+				713B6C892CCB89B100465A6C /* RegisterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -172,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				71AFA8CD2CCB54F000F87553 /* LoginVM.swift */,
+				713B6C872CCB853100465A6C /* RegisterVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -208,6 +227,7 @@
 		71CDEB162CCA29C500C82BAE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				713B6C852CCB7CA000465A6C /* EmployeeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -224,6 +244,7 @@
 		71CDEB182CCA29D600C82BAE /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				713B6C832CCB7C1400465A6C /* EmployeesListingVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -402,18 +423,25 @@
 				71FBAC772CCB46A300625850 /* APICallManager.swift in Sources */,
 				71FBAC732CCB451100625850 /* AppToastView.swift in Sources */,
 				71FBAC7B2CCB485400625850 /* ValidationService.swift in Sources */,
+				713B6C862CCB7CA000465A6C /* EmployeeModel.swift in Sources */,
 				71CDEB0D2CCA108F00C82BAE /* ViewClasses.swift in Sources */,
 				714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */,
+				71AFA8D42CCB619A00F87553 /* LoginModel.swift in Sources */,
 				714EF1182CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift in Sources */,
 				71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */,
 				71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */,
+				713B6C842CCB7C1400465A6C /* EmployeesListingVM.swift in Sources */,
 				714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */,
 				71FBAC752CCB458A00625850 /* AppActivityIndicator.swift in Sources */,
+				713B6C802CCB760F00465A6C /* AppUserData.swift in Sources */,
+				713B6C882CCB853100465A6C /* RegisterVM.swift in Sources */,
 				71FBAC792CCB47E200625850 /* Network.swift in Sources */,
 				714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */,
 				71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */,
+				71AFA8D22CCB5C2C00F87553 /* APIsList.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
 				71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */,
+				713B6C8A2CCB89B100465A6C /* RegisterModel.swift in Sources */,
 				71CDEB0F2CCA176400C82BAE /* ButtonClasses.swift in Sources */,
 				71CDEB142CCA1D0E00C82BAE /* AppController.swift in Sources */,
 				71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */,
