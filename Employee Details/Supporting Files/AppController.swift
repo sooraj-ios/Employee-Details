@@ -55,4 +55,8 @@ class AppController {
     var addPayment: AddPaymentVC {
         AppStoryboard.shared.employee.instantiateViewController(identifier: "AddPaymentVC_id") as! AddPaymentVC
     }
+
+    var datePicker: DatePickerVC {
+        AppStoryboard.shared.employee.instantiateViewController(identifier: "DatePickerVC_id") as! DatePickerVC
+    }
 }

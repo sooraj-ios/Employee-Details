@@ -18,6 +18,8 @@
 		714EF11C2CCA5926000907AA /* PaymentsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714EF11A2CCA5926000907AA /* PaymentsTVC.xib */; };
 		714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */; };
 		714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11F2CCA663E000907AA /* AddPaymentVC.swift */; };
+		71A3410E2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3410D2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift */; };
+		71A341102CCBA5AD008EB479 /* DesignationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A3410F2CCBA5AD008EB479 /* DesignationModel.swift */; };
 		71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CD2CCB54F000F87553 /* LoginVM.swift */; };
 		71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CF2CCB55B900F87553 /* Observable.swift */; };
 		71AFA8D22CCB5C2C00F87553 /* APIsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8D12CCB5C2C00F87553 /* APIsList.swift */; };
@@ -42,6 +44,10 @@
 		71FBAC792CCB47E200625850 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC782CCB47E200625850 /* Network.swift */; };
 		71FBAC7B2CCB485400625850 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC7A2CCB485400625850 /* ValidationService.swift */; };
 		71FBAC7E2CCB495B00625850 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC7D2CCB495B00625850 /* StringExtensions.swift */; };
+		71FBF7BA2CCBB20100D2635C /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF7B92CCBB20100D2635C /* DatePickerVC.swift */; };
+		71FBF7BC2CCBBD8300D2635C /* ImageViewClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF7BB2CCBBD8300D2635C /* ImageViewClasses.swift */; };
+		71FBF7BE2CCBBE7100D2635C /* BasicDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF7BD2CCBBE7100D2635C /* BasicDetailsModel.swift */; };
+		71FBF7C02CCBC0EA00D2635C /* ContactDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBF7BF2CCBC0EA00D2635C /* ContactDetailsModel.swift */; };
 		869E17513F2CC476BAF9D552 /* Pods_Employee_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13383E71B1E2E28E8E8DC578 /* Pods_Employee_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +65,8 @@
 		714EF11A2CCA5926000907AA /* PaymentsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsTVC.xib; sourceTree = "<group>"; };
 		714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
 		714EF11F2CCA663E000907AA /* AddPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentVC.swift; sourceTree = "<group>"; };
+		71A3410D2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeBasicDetailsVM.swift; sourceTree = "<group>"; };
+		71A3410F2CCBA5AD008EB479 /* DesignationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignationModel.swift; sourceTree = "<group>"; };
 		71AFA8CD2CCB54F000F87553 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
 		71AFA8CF2CCB55B900F87553 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		71AFA8D12CCB5C2C00F87553 /* APIsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIsList.swift; sourceTree = "<group>"; };
@@ -85,6 +93,10 @@
 		71FBAC782CCB47E200625850 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		71FBAC7A2CCB485400625850 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
 		71FBAC7D2CCB495B00625850 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		71FBF7B92CCBB20100D2635C /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		71FBF7BB2CCBBD8300D2635C /* ImageViewClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewClasses.swift; sourceTree = "<group>"; };
+		71FBF7BD2CCBBE7100D2635C /* BasicDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDetailsModel.swift; sourceTree = "<group>"; };
+		71FBF7BF2CCBC0EA00D2635C /* ContactDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailsModel.swift; sourceTree = "<group>"; };
 		F7B3476715DD7C37552A1F18 /* Pods-Employee Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Details.debug.xcconfig"; path = "Target Support Files/Pods-Employee Details/Pods-Employee Details.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +221,7 @@
 			children = (
 				71CDEB0C2CCA108F00C82BAE /* ViewClasses.swift */,
 				71CDEB0E2CCA176400C82BAE /* ButtonClasses.swift */,
+				71FBF7BB2CCBBD8300D2635C /* ImageViewClasses.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -228,6 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				713B6C852CCB7CA000465A6C /* EmployeeModel.swift */,
+				71A3410F2CCBA5AD008EB479 /* DesignationModel.swift */,
+				71FBF7BD2CCBBE7100D2635C /* BasicDetailsModel.swift */,
+				71FBF7BF2CCBC0EA00D2635C /* ContactDetailsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -245,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				713B6C832CCB7C1400465A6C /* EmployeesListingVM.swift */,
+				71A3410D2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -258,6 +275,7 @@
 				714EF1172CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift */,
 				714EF11F2CCA663E000907AA /* AddPaymentVC.swift */,
 				714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */,
+				71FBF7B92CCBB20100D2635C /* DatePickerVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -418,6 +436,7 @@
 				71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */,
 				71CDEB1D2CCA2A7B00C82BAE /* EmployeesListingVC.swift in Sources */,
 				71CDEB242CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift in Sources */,
+				71FBF7BC2CCBBD8300D2635C /* ImageViewClasses.swift in Sources */,
 				71FBAC7E2CCB495B00625850 /* StringExtensions.swift in Sources */,
 				71370CC62CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift in Sources */,
 				71FBAC772CCB46A300625850 /* APICallManager.swift in Sources */,
@@ -431,6 +450,7 @@
 				71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */,
 				71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */,
 				713B6C842CCB7C1400465A6C /* EmployeesListingVM.swift in Sources */,
+				71FBF7BE2CCBBE7100D2635C /* BasicDetailsModel.swift in Sources */,
 				714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */,
 				71FBAC752CCB458A00625850 /* AppActivityIndicator.swift in Sources */,
 				713B6C802CCB760F00465A6C /* AppUserData.swift in Sources */,
@@ -438,13 +458,17 @@
 				71FBAC792CCB47E200625850 /* Network.swift in Sources */,
 				714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */,
 				71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */,
+				71A341102CCBA5AD008EB479 /* DesignationModel.swift in Sources */,
+				71A3410E2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift in Sources */,
 				71AFA8D22CCB5C2C00F87553 /* APIsList.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
 				71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */,
+				71FBF7BA2CCBB20100D2635C /* DatePickerVC.swift in Sources */,
 				713B6C8A2CCB89B100465A6C /* RegisterModel.swift in Sources */,
 				71CDEB0F2CCA176400C82BAE /* ButtonClasses.swift in Sources */,
 				71CDEB142CCA1D0E00C82BAE /* AppController.swift in Sources */,
 				71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */,
+				71FBF7C02CCBC0EA00D2635C /* ContactDetailsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,6 +617,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Employee Details/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow this to upload choose a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow this to upload choose a profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;
@@ -623,6 +649,8 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Employee Details/Supporting Files/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow this to upload choose a profile picture";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Allow this to upload choose a profile picture";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Authentication;

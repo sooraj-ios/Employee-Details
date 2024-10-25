@@ -25,8 +25,6 @@ class EmployeeDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataS
     @IBOutlet weak var salaryAmountLbl: UILabel!
 
     // MARK: - CONSTANTS AND VARIABLES
-//    var viewModel: EmployeesListingVM = EmployeesListingVM()
-//    let activityIndicator = ActivityIndicator()
     var employeesData:Employee?
     var monthlyPaymentsArray:[Monthly_payments] = []
 
@@ -41,6 +39,7 @@ class EmployeeDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataS
         paymentsTableView.dataSource = self
         paymentsTableView.register(UINib(nibName: "PaymentsTVC", bundle: nil), forCellReuseIdentifier: "PaymentsTVC_id")
         if let data = employeesData{
+            profileImageLbl.sd_setImage(with: URL(string: (data.profile_image_url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)) ?? ""), placeholderImage: UIImage(named: "profile_placeholder"))
             nameLbl.text = "\((data.first_name ?? "").capitalized) \((data.last_name ?? "").capitalized)"
             roleLbl.text = data.designation ?? ""
             numberLbl.text = data.mobile_number ?? ""

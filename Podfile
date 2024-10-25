@@ -7,5 +7,6 @@ target 'Employee Details' do
 
   # Pods for Employee Details
 	pod 'IQKeyboardManager'
+	pod 'SDWebImage'
 
 end

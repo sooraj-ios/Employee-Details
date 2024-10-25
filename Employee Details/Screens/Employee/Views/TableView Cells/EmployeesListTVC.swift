@@ -24,6 +24,7 @@ class EmployeesListTVC: UITableViewCell {
     }
 
     func setData(data:Employee){
+        profileImageView.sd_setImage(with: URL(string: (data.profile_image_url?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)) ?? ""), placeholderImage: UIImage(named: "profile_placeholder"))
         nameLbl.text = "\((data.first_name ?? "").capitalized) \((data.last_name ?? "").capitalized)"
         numberLbl.text = data.mobile_number
     }

@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Employee Details/Pods-Employee Details-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

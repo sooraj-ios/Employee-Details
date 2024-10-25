@@ -20,6 +20,6 @@ final class APIsList {
     let employees = "/employees?page="
     let addEmployee = "/employees"
     let employeeDetails = "/employees/"
-    let designation = "/designation"
+    let designation = "/designations"
     let addDesignation = "/designations"
 }

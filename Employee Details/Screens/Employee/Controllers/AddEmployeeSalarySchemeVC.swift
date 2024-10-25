@@ -20,6 +20,9 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var remainingPercentage: UIButton!
     @IBOutlet weak var remainingMonths: UIButton!
     
+    var basicDetailsCollected:BasicDetailsModel?
+    var contactDetailsCollected: ContactDetailsModel?
+    
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
         super.viewDidLoad()
