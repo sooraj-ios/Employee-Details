@@ -13,7 +13,11 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signinButton: PrimaryButton!
     @IBOutlet weak var passwordHideShowIconView: UIImageView!
-    
+
+    // MARK: - VARIABLES AND CONSTANTS
+    var viewModel: LoginVM = LoginVM()
+    let activityIndicator = ActivityIndicator()
+
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +52,38 @@ class LoginVC: UIViewController {
     }
     func checkValidations(){
         _ = emailField.text ?? "" != "" && passwordField.text ?? "" != "" ? signinButton.setAsEnabled() : signinButton.setAsDisabled()
+    }
+    func bindViewModel() {
+        viewModel.isLoadingData.bind { [weak self] isLoading in
+            guard let isLoading = isLoading else {
+                return
+            }
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.show()
+                } else {
+                    self?.activityIndicator.hide()
+                }
+            }
+        }
+
+        viewModel.showError.bind { message in
+            guard let message = message else {
+                return
+            }
+            AppToastView.shared.showToast(message: message, toastType: .error)
+        }
+
+    }
+
+    func makeRequest() {
+        do {
+            _ = try ValidationService.validate(email: emailField.text)
+            viewModel.signIn(email: emailField.text ?? "", password: passwordField.text ?? "")
+        } catch {
+            print(error.localizedDescription)
+            AppToastView.shared.showToast(message: error.localizedDescription,toastType: .warning)
+        }
     }
 }
 

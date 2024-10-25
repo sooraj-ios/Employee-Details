@@ -13,6 +13,8 @@
 		714EF11C2CCA5926000907AA /* PaymentsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 714EF11A2CCA5926000907AA /* PaymentsTVC.xib */; };
 		714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */; };
 		714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714EF11F2CCA663E000907AA /* AddPaymentVC.swift */; };
+		71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CD2CCB54F000F87553 /* LoginVM.swift */; };
+		71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFA8CF2CCB55B900F87553 /* Observable.swift */; };
 		71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */; };
 		71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */; };
 		71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEAF42CCA07C600C82BAE /* LoginVC.swift */; };
@@ -27,6 +29,12 @@
 		71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB1F2CCA2C4B00C82BAE /* EmployeesListTVC.swift */; };
 		71CDEB222CCA2C4B00C82BAE /* EmployeesListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CDEB202CCA2C4B00C82BAE /* EmployeesListTVC.xib */; };
 		71CDEB242CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB232CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift */; };
+		71FBAC732CCB451100625850 /* AppToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC722CCB451100625850 /* AppToastView.swift */; };
+		71FBAC752CCB458A00625850 /* AppActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC742CCB458A00625850 /* AppActivityIndicator.swift */; };
+		71FBAC772CCB46A300625850 /* APICallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC762CCB46A300625850 /* APICallManager.swift */; };
+		71FBAC792CCB47E200625850 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC782CCB47E200625850 /* Network.swift */; };
+		71FBAC7B2CCB485400625850 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC7A2CCB485400625850 /* ValidationService.swift */; };
+		71FBAC7E2CCB495B00625850 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC7D2CCB495B00625850 /* StringExtensions.swift */; };
 		869E17513F2CC476BAF9D552 /* Pods_Employee_Details.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13383E71B1E2E28E8E8DC578 /* Pods_Employee_Details.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +47,8 @@
 		714EF11A2CCA5926000907AA /* PaymentsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentsTVC.xib; sourceTree = "<group>"; };
 		714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsVC.swift; sourceTree = "<group>"; };
 		714EF11F2CCA663E000907AA /* AddPaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentVC.swift; sourceTree = "<group>"; };
+		71AFA8CD2CCB54F000F87553 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		71AFA8CF2CCB55B900F87553 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		71CDEAED2CCA07C600C82BAE /* Employee Details.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Employee Details.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +65,12 @@
 		71CDEB1F2CCA2C4B00C82BAE /* EmployeesListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListTVC.swift; sourceTree = "<group>"; };
 		71CDEB202CCA2C4B00C82BAE /* EmployeesListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesListTVC.xib; sourceTree = "<group>"; };
 		71CDEB232CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeBasicDetailsVC.swift; sourceTree = "<group>"; };
+		71FBAC722CCB451100625850 /* AppToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToastView.swift; sourceTree = "<group>"; };
+		71FBAC742CCB458A00625850 /* AppActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityIndicator.swift; sourceTree = "<group>"; };
+		71FBAC762CCB46A300625850 /* APICallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallManager.swift; sourceTree = "<group>"; };
+		71FBAC782CCB47E200625850 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		71FBAC7A2CCB485400625850 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		71FBAC7D2CCB495B00625850 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		F7B3476715DD7C37552A1F18 /* Pods-Employee Details.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Employee Details.debug.xcconfig"; path = "Target Support Files/Pods-Employee Details/Pods-Employee Details.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,9 +117,16 @@
 			isa = PBXGroup;
 			children = (
 				71CDEB0B2CCA106900C82BAE /* Classes */,
+				71FBAC7C2CCB493E00625850 /* Extensions */,
 				71CDEAF02CCA07C600C82BAE /* AppDelegate.swift */,
 				71CDEB132CCA1D0E00C82BAE /* AppController.swift */,
 				71CDEAF22CCA07C600C82BAE /* SceneDelegate.swift */,
+				71FBAC722CCB451100625850 /* AppToastView.swift */,
+				71FBAC742CCB458A00625850 /* AppActivityIndicator.swift */,
+				71FBAC762CCB46A300625850 /* APICallManager.swift */,
+				71FBAC782CCB47E200625850 /* Network.swift */,
+				71FBAC7A2CCB485400625850 /* ValidationService.swift */,
+				71AFA8CF2CCB55B900F87553 /* Observable.swift */,
 				71CDEAF92CCA07C800C82BAE /* Assets.xcassets */,
 				71CDEAFE2CCA07C800C82BAE /* Info.plist */,
 			);
@@ -148,6 +171,7 @@
 		71CDEB092CCA086300C82BAE /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				71AFA8CD2CCB54F000F87553 /* LoginVM.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -226,6 +250,14 @@
 				714EF11A2CCA5926000907AA /* PaymentsTVC.xib */,
 			);
 			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		71FBAC7C2CCB493E00625850 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				71FBAC7D2CCB495B00625850 /* StringExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CFCB33BE5589F23605CCEE07 /* Frameworks */ = {
@@ -365,18 +397,26 @@
 				71CDEAF52CCA07C600C82BAE /* LoginVC.swift in Sources */,
 				71CDEB1D2CCA2A7B00C82BAE /* EmployeesListingVC.swift in Sources */,
 				71CDEB242CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift in Sources */,
+				71FBAC7E2CCB495B00625850 /* StringExtensions.swift in Sources */,
 				71370CC62CCA3E64007718F9 /* AddEmployeeContactDetailsVC.swift in Sources */,
+				71FBAC772CCB46A300625850 /* APICallManager.swift in Sources */,
+				71FBAC732CCB451100625850 /* AppToastView.swift in Sources */,
+				71FBAC7B2CCB485400625850 /* ValidationService.swift in Sources */,
 				71CDEB0D2CCA108F00C82BAE /* ViewClasses.swift in Sources */,
 				714EF1202CCA663E000907AA /* AddPaymentVC.swift in Sources */,
 				714EF1182CCA5115000907AA /* AddEmployeeSalarySchemeVC.swift in Sources */,
 				71CDEAF12CCA07C600C82BAE /* AppDelegate.swift in Sources */,
+				71AFA8CE2CCB54F000F87553 /* LoginVM.swift in Sources */,
 				714EF11E2CCA6044000907AA /* EmployeeDetailsVC.swift in Sources */,
+				71FBAC752CCB458A00625850 /* AppActivityIndicator.swift in Sources */,
+				71FBAC792CCB47E200625850 /* Network.swift in Sources */,
 				714EF11B2CCA5926000907AA /* PaymentsTVC.swift in Sources */,
 				71CDEB112CCA1A3700C82BAE /* RegisterVC.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
 				71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */,
 				71CDEB0F2CCA176400C82BAE /* ButtonClasses.swift in Sources */,
 				71CDEB142CCA1D0E00C82BAE /* AppController.swift in Sources */,
+				71AFA8D02CCB55B900F87553 /* Observable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
