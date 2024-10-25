@@ -8,7 +8,10 @@
 import UIKit
 
 class EmployeesListTVC: UITableViewCell {
-
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var numberLbl: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -19,5 +22,10 @@ class EmployeesListTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func setData(data:Employee){
+        nameLbl.text = "\((data.first_name ?? "").capitalized) \((data.last_name ?? "").capitalized)"
+        numberLbl.text = data.mobile_number
+    }
+
 }

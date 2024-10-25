@@ -15,7 +15,7 @@ class EmployeesListingVC: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - CONSTANTS AND VARIABLES
     var viewModel: EmployeesListingVM = EmployeesListingVM()
     let activityIndicator = ActivityIndicator()
-    var employeesArray:[String] = []
+    var employeesArray:[Employee] = []
 
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
@@ -83,12 +83,15 @@ class EmployeesListingVC: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellData = employeesArray[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeesListTVC_id") as! EmployeesListTVC
+        cell.setData(data: cellData)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let nextVC = AppController.shared.employeeDetails
+        nextVC.employeesData = employeesArray[indexPath.item]
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }

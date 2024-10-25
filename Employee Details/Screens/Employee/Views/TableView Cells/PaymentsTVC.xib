@@ -84,12 +84,14 @@
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUe-Kf-95y">
                                                 <rect key="frame" x="583" y="0.0" width="34" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="xUe-Kf-95y" secondAttribute="height" id="Ax4-gz-b5D"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="delete_icon"/>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="xUe-Kf-95y" firstAttribute="width" secondItem="xUe-Kf-95y" secondAttribute="height" id="Ax4-gz-b5D"/>
                                             <constraint firstAttribute="height" constant="34" id="WbO-CG-vPM"/>
                                         </constraints>
                                     </stackView>
@@ -126,6 +128,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="deleteButton" destination="xUe-Kf-95y" id="g7A-wU-yJX"/>
+                <outlet property="monthLbl" destination="9BX-C2-n8b" id="QGi-VM-yei"/>
+                <outlet property="paymentAmountLbl" destination="WoE-9l-Tnl" id="hgz-cj-2M1"/>
+                <outlet property="paymentAmountPercentageLbl" destination="PEB-t8-ftB" id="3as-aj-ShT"/>
+                <outlet property="paymentDateLbl" destination="rgw-jC-mnv" id="RsN-hu-Eiy"/>
+                <outlet property="remarkLbl" destination="lOB-wL-1Wq" id="54R-jk-tyf"/>
+            </connections>
             <point key="canvasLocation" x="380.91603053435114" y="48.591549295774648"/>
         </tableViewCell>
     </objects>
