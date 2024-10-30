@@ -40,6 +40,7 @@
 		71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB1F2CCA2C4B00C82BAE /* EmployeesListTVC.swift */; };
 		71CDEB222CCA2C4B00C82BAE /* EmployeesListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CDEB202CCA2C4B00C82BAE /* EmployeesListTVC.xib */; };
 		71CDEB242CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDEB232CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift */; };
+		71EAC1EF2CD294D5007071A0 /* WebViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EAC1EE2CD294C8007071A0 /* WebViewer.swift */; };
 		71FBAC732CCB451100625850 /* AppToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC722CCB451100625850 /* AppToastView.swift */; };
 		71FBAC752CCB458A00625850 /* AppActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC742CCB458A00625850 /* AppActivityIndicator.swift */; };
 		71FBAC772CCB46A300625850 /* APICallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FBAC762CCB46A300625850 /* APICallManager.swift */; };
@@ -91,6 +92,7 @@
 		71CDEB1F2CCA2C4B00C82BAE /* EmployeesListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesListTVC.swift; sourceTree = "<group>"; };
 		71CDEB202CCA2C4B00C82BAE /* EmployeesListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmployeesListTVC.xib; sourceTree = "<group>"; };
 		71CDEB232CCA339400C82BAE /* AddEmployeeBasicDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeBasicDetailsVC.swift; sourceTree = "<group>"; };
+		71EAC1EE2CD294C8007071A0 /* WebViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewer.swift; sourceTree = "<group>"; };
 		71FBAC722CCB451100625850 /* AppToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToastView.swift; sourceTree = "<group>"; };
 		71FBAC742CCB458A00625850 /* AppActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActivityIndicator.swift; sourceTree = "<group>"; };
 		71FBAC762CCB46A300625850 /* APICallManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallManager.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				714EF11F2CCA663E000907AA /* AddPaymentVC.swift */,
 				714EF11D2CCA6044000907AA /* EmployeeDetailsVC.swift */,
 				71FBF7B92CCBB20100D2635C /* DatePickerVC.swift */,
+				71EAC1EE2CD294C8007071A0 /* WebViewer.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				71A341102CCBA5AD008EB479 /* DesignationModel.swift in Sources */,
 				71A3410E2CCBA532008EB479 /* AddEmployeeBasicDetailsVM.swift in Sources */,
 				71AFA8D22CCB5C2C00F87553 /* APIsList.swift in Sources */,
+				71EAC1EF2CD294D5007071A0 /* WebViewer.swift in Sources */,
 				71CDEAF32CCA07C600C82BAE /* SceneDelegate.swift in Sources */,
 				71CDEB212CCA2C4B00C82BAE /* EmployeesListTVC.swift in Sources */,
 				71FBF7BA2CCBB20100D2635C /* DatePickerVC.swift in Sources */,

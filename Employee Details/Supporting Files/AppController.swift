@@ -59,4 +59,8 @@ class AppController {
     var datePicker: DatePickerVC {
         AppStoryboard.shared.employee.instantiateViewController(identifier: "DatePickerVC_id") as! DatePickerVC
     }
+
+    var webViewer: WebViewer {
+        AppStoryboard.shared.employee.instantiateViewController(identifier: "WebViewer_id") as! WebViewer
+    }
 }

@@ -517,7 +517,6 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="361" height="102"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <action selector="fileViewAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="YKD-GX-Ecw"/>
                                                                     <action selector="uploadFileAction:" destination="j1c-JB-e2P" eventType="touchUpInside" id="AOS-fM-OlW"/>
                                                                 </connections>
                                                             </button>
@@ -633,6 +632,7 @@
                         <outlet property="dateOfBirthField" destination="T7r-08-I1O" id="cIg-Jx-hDq"/>
                         <outlet property="designationButton" destination="Px6-0W-YCK" id="hRP-gY-co1"/>
                         <outlet property="designationField" destination="bdG-nZ-4bi" id="hR8-29-dUx"/>
+                        <outlet property="fileImageView" destination="WuG-GM-gd4" id="NKv-Qp-HUO"/>
                         <outlet property="firstNameField" destination="JKd-Qk-xst" id="VAA-rG-EnU"/>
                         <outlet property="genderButton" destination="Lcw-jJ-phS" id="d0m-uS-Rb8"/>
                         <outlet property="genderField" destination="mlh-HU-3W1" id="dCh-Kl-JG7"/>
@@ -1915,6 +1915,96 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4r-Sb-bGn" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6052.6717557251905" y="-35.211267605633807"/>
+        </scene>
+        <!--Web Viewer-->
+        <scene sceneID="eKM-Yq-56Q">
+            <objects>
+                <viewController storyboardIdentifier="WebViewer_id" id="UsS-Xn-1j3" customClass="WebViewer" customModule="Employee_Details" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eA4-3F-a1V">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZE-BX-HHS">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="59"/>
+                                <color key="backgroundColor" name="StatusBar"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2S-wD-jd9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="40"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEF-lD-ukP">
+                                        <rect key="frame" x="0.0" y="39.333333333333329" width="393" height="0.6666666666666643"/>
+                                        <color key="backgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.80000000000000004" id="jBP-1h-9Ql"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zZ-Pi-lET">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2zZ-Pi-lET" secondAttribute="height" id="TyC-MQ-t5C"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="back_arrow"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="UsS-Xn-1j3" eventType="touchUpInside" id="JAV-T7-QLb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viewer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6XO-mW-f0V">
+                                        <rect key="frame" x="60" y="0.0" width="333" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" name="TextPrimaryDark"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="HeaderView"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2zZ-Pi-lET" secondAttribute="bottom" id="6DY-Va-NWM"/>
+                                    <constraint firstItem="6XO-mW-f0V" firstAttribute="top" secondItem="q2S-wD-jd9" secondAttribute="top" id="9FA-vV-wku"/>
+                                    <constraint firstAttribute="trailing" secondItem="6XO-mW-f0V" secondAttribute="trailing" id="Joz-Cm-zEl"/>
+                                    <constraint firstItem="2zZ-Pi-lET" firstAttribute="leading" secondItem="q2S-wD-jd9" secondAttribute="leading" id="PoG-tG-cn7"/>
+                                    <constraint firstItem="fEF-lD-ukP" firstAttribute="leading" secondItem="q2S-wD-jd9" secondAttribute="leading" id="SfP-4H-ARN"/>
+                                    <constraint firstAttribute="height" constant="40" id="Xrf-AP-m6f"/>
+                                    <constraint firstItem="2zZ-Pi-lET" firstAttribute="top" secondItem="q2S-wD-jd9" secondAttribute="top" id="aqR-Jv-fQh"/>
+                                    <constraint firstItem="6XO-mW-f0V" firstAttribute="leading" secondItem="2zZ-Pi-lET" secondAttribute="trailing" constant="20" id="j4W-gy-UdJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="6XO-mW-f0V" secondAttribute="bottom" id="l9g-rc-deq"/>
+                                    <constraint firstAttribute="trailing" secondItem="fEF-lD-ukP" secondAttribute="trailing" id="ooj-zT-p7y"/>
+                                    <constraint firstAttribute="bottom" secondItem="fEF-lD-ukP" secondAttribute="bottom" id="qdR-gl-Qff"/>
+                                </constraints>
+                            </view>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6H1-2L-LS3">
+                                <rect key="frame" x="0.0" y="99" width="393" height="753"/>
+                                <color key="backgroundColor" name="BackgroundViewPrimary"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tFi-ZD-BOY"/>
+                        <color key="backgroundColor" name="BackgroundViewPrimary"/>
+                        <constraints>
+                            <constraint firstItem="6H1-2L-LS3" firstAttribute="top" secondItem="q2S-wD-jd9" secondAttribute="bottom" id="9k4-MM-Ia1"/>
+                            <constraint firstItem="YZE-BX-HHS" firstAttribute="top" secondItem="eA4-3F-a1V" secondAttribute="top" id="VNm-qH-PFz"/>
+                            <constraint firstItem="q2S-wD-jd9" firstAttribute="top" secondItem="YZE-BX-HHS" secondAttribute="bottom" id="VlV-18-zv6"/>
+                            <constraint firstAttribute="trailing" secondItem="q2S-wD-jd9" secondAttribute="trailing" id="WoH-vB-mD0"/>
+                            <constraint firstAttribute="trailing" secondItem="YZE-BX-HHS" secondAttribute="trailing" id="h1g-5b-DGe"/>
+                            <constraint firstItem="q2S-wD-jd9" firstAttribute="leading" secondItem="eA4-3F-a1V" secondAttribute="leading" id="j8A-fI-Gle"/>
+                            <constraint firstAttribute="bottom" secondItem="6H1-2L-LS3" secondAttribute="bottom" id="lVH-dp-Vgr"/>
+                            <constraint firstAttribute="trailing" secondItem="6H1-2L-LS3" secondAttribute="trailing" id="qdZ-gx-J5T"/>
+                            <constraint firstItem="YZE-BX-HHS" firstAttribute="leading" secondItem="eA4-3F-a1V" secondAttribute="leading" id="tc1-Od-KlQ"/>
+                            <constraint firstItem="tFi-ZD-BOY" firstAttribute="top" secondItem="YZE-BX-HHS" secondAttribute="bottom" id="zGy-aD-qcn"/>
+                            <constraint firstItem="6H1-2L-LS3" firstAttribute="leading" secondItem="eA4-3F-a1V" secondAttribute="leading" id="zVG-WI-Ji5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ui0-cM-dKI"/>
+                    <connections>
+                        <outlet property="pageTitleLbl" destination="6XO-mW-f0V" id="eTa-kj-yl3"/>
+                        <outlet property="webview" destination="6H1-2L-LS3" id="pC1-Jb-QkY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4v4-Dm-UXr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6811.4503816793895" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>

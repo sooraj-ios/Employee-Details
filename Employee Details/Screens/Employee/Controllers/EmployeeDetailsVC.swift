@@ -62,7 +62,11 @@ class EmployeeDetailsVC: UIViewController, UITableViewDelegate, UITableViewDataS
      }
 
     @IBAction func viewFileAction(_ sender: UIButton) {
-        
+        let nextVC = AppController.shared.webViewer
+        nextVC.urlString = employeesData?.resume ?? ""
+        nextVC.modalPresentationStyle = .overCurrentContext
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true)
     }
     
     // MARK: - TABLE VIEW

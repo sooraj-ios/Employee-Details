@@ -19,6 +19,7 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentPickerDelegate, UII
     @IBOutlet weak var nextButton: PrimaryButton!
     @IBOutlet weak var designationButton: UIButton!
     @IBOutlet weak var genderButton: UIButton!
+    @IBOutlet weak var fileImageView: UIImageView!
     
     // MARK: - CONSTANTS AND VARIABLES
     var viewModel: AddEmployeeBasicDetailsVM = AddEmployeeBasicDetailsVM()
@@ -116,6 +117,8 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentPickerDelegate, UII
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
         guard let selectedFileURL = urls.first else { return }
         documentPath = selectedFileURL.path
+        importedFileView.isHidden = false
+        fileImageView.image = UIImage(named: "pdf_icon")
         checkValidations()
     }
 
@@ -156,7 +159,11 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentPickerDelegate, UII
     }
 
     @IBAction func fileViewAction(_ sender: UIButton) {
-
+        let nextVC = AppController.shared.webViewer
+        nextVC.urlString = documentPath
+        nextVC.modalPresentationStyle = .overCurrentContext
+        nextVC.modalTransitionStyle = .crossDissolve
+        self.present(nextVC, animated: true)
     }
 
     @IBAction func uploadFileAction(_ sender: UIButton) {
