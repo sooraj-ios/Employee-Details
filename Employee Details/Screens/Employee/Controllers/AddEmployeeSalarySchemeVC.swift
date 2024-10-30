@@ -69,6 +69,17 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
             }
             AppToastView.shared.showToast(message: message, toastType: .error)
         }
+
+        viewModel.added.bind { [weak self] added in
+            guard let added = added else {
+                return
+            }
+            DispatchQueue.main.async {
+                if added {
+                    self?.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }
     }
 
     // MARK: - BUTTON ACTIONS

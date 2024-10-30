@@ -80,3 +80,23 @@ struct Monthly_payments : Codable {
     let remarks : String?
     let created_at : String?
 }
+
+struct EmployeeCreatedModel : Codable {
+    let id : Int?
+    let user_id : Int?
+    let first_name : String?
+    let last_name : String?
+    let profile_image_url : String?
+    let resume : String?
+    let date_of_birth : String?
+    let gender : String?
+    let email : String?
+    let designation : String?
+    let mobile_number : String?
+    let address : String?
+    let contract_period : Int?
+    let total_salary : Int?
+    let monthly_payments : [Monthly_payments]?
+    let created_at : String?
+    let message:String?
+}
