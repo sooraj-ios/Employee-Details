@@ -28,6 +28,7 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
     var contactDetailsCollected: ContactDetailsModel?
     var selectedContractPeriod = 3
     var monthlyPaymentsArray:[Monthly_payments] = []
+    var remainingPercentageValue = 100
 
     // MARK: - LOADING VIEW CONTROLLER
     override func viewDidLoad() {
@@ -82,17 +83,30 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
         monthlyPaymentsArray = []
         paymentsTableViewHeight.constant = 0
         paymentsTableView.reloadData()
+        self.setRemaining()
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
         totalSalaryLbl.setTitle("₹ \(Int(sender.value))", for: .normal)
+        addButton.setTitle("Add Monthly Payment (1/\(sender.tag))", for: .normal)
+        monthlyPaymentsArray = []
+        paymentsTableViewHeight.constant = 0
+        paymentsTableView.reloadData()
+        self.setRemaining()
     }
     
     @IBAction func addAction(_ sender: UIButton) {
         if self.monthlyPaymentsArray.count == self.selectedContractPeriod{
-            addEmployee()
+            if remainingPercentageValue != 0{
+                let alert = UIAlertController(title: "Amount Pending!", message: "\(remainingPercentageValue)% is pending. please check.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }else{
+                addEmployee()
+            }
         }else{
             let nextVC = AppController.shared.addPayment
+            nextVC.remainingPercentageValue = self.remainingPercentageValue
             nextVC.totalAmount = Int(salarySlider.value)
             nextVC.minimumDate = self.monthlyPaymentsArray.count == 0 ? Date() : stringToDate(dateString: self.monthlyPaymentsArray.last?.payment_date ?? "")
             if let presentationController = nextVC.presentationController as? UISheetPresentationController {
@@ -102,6 +116,7 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
                 self.monthlyPaymentsArray.append(payment)
                 self.paymentsTableViewHeight.constant = CGFloat(self.monthlyPaymentsArray.count * 200)
                 self.paymentsTableView.reloadData()
+                self.setRemaining()
                 if self.monthlyPaymentsArray.count == self.selectedContractPeriod{
                     self.addButton.setTitle("Save", for: .normal)
                 }else{
@@ -158,6 +173,17 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
             parameters.append(amountParameter)
         }
         viewModel.addEmployee(parameters: parameters)
+    }
+
+    func setRemaining(){
+        var remainingSalaryValue = Int(salarySlider.value)
+        for item in monthlyPaymentsArray{
+            remainingSalaryValue -= item.amount ?? 0
+            remainingPercentageValue -= item.amount_percentage ?? 0
+        }
+        remainingSalary.setTitle("₹ \(remainingSalaryValue)", for: .normal)
+        remainingPercentage.setTitle("\(remainingPercentageValue)%", for: .normal)
+        remainingMonths.setTitle("\(selectedContractPeriod - monthlyPaymentsArray.count) Months", for: .normal)
     }
 
 

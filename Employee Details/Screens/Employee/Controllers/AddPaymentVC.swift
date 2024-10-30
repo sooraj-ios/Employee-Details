@@ -17,6 +17,7 @@ class AddPaymentVC: UIViewController, UITextViewDelegate{
     var paymentClosure: ((Monthly_payments) -> ())!
     var totalAmount = 0
     var minimumDate = Date()
+    var remainingPercentageValue = 100
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -71,9 +72,15 @@ class AddPaymentVC: UIViewController, UITextViewDelegate{
     }
 
      @IBAction func saveAction(_ sender: UIButton) {
-         let amount = calculatePercentageAmount(totalAmount: totalAmount, percentage: Int(amountPercentageField.text ?? "") ?? 0)
-         paymentClosure(Monthly_payments(id: 0, payment_date: dateField.text ?? "", amount: amount, amount_percentage: Int(amountPercentageField.text ?? "") ?? 0, remarks: remarkField.text ?? "", created_at: ""))
-         self.dismiss(animated: true)
+         if remainingPercentageValue < Int(amountPercentageField.text ?? "") ?? 0{
+             let alert = UIAlertController(title: "Percentage limit exceed!", message: "You have \(remainingPercentageValue)% left.", preferredStyle: UIAlertController.Style.alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+             self.present(alert, animated: true, completion: nil)
+         }else{
+             let amount = calculatePercentageAmount(totalAmount: totalAmount, percentage: Int(amountPercentageField.text ?? "") ?? 0)
+             paymentClosure(Monthly_payments(id: 0, payment_date: dateField.text ?? "", amount: amount, amount_percentage: Int(amountPercentageField.text ?? "") ?? 0, remarks: remarkField.text ?? "", created_at: ""))
+             self.dismiss(animated: true)
+         }
      }
 
 }
