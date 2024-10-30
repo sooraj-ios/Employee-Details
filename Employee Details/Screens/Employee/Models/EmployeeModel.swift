@@ -79,25 +79,4 @@ struct Monthly_payments : Codable {
     let amount_percentage : Int?
     let remarks : String?
     let created_at : String?
-
-    enum CodingKeys: String, CodingKey {
-
-        case id = "id"
-        case payment_date = "payment_date"
-        case amount = "amount"
-        case amount_percentage = "amount_percentage"
-        case remarks = "remarks"
-        case created_at = "created_at"
-    }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(Int.self, forKey: .id)
-        payment_date = try values.decodeIfPresent(String.self, forKey: .payment_date)
-        amount = try values.decodeIfPresent(Int.self, forKey: .amount)
-        amount_percentage = try values.decodeIfPresent(Int.self, forKey: .amount_percentage)
-        remarks = try values.decodeIfPresent(String.self, forKey: .remarks)
-        created_at = try values.decodeIfPresent(String.self, forKey: .created_at)
-    }
-
 }

@@ -18,7 +18,7 @@ class APICallManager {
 
     static let shared = APICallManager()
 
-    func performAPIRequest<T: Decodable>(method: HTTPMethod, apiURL: String, parameters: [[String: Any]]? = nil, isMultipart: Bool = false, headers: [String: String]? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
+    func performAPIRequest<T: Decodable>(method: HTTPMethod, apiURL: String, parameters: [[String: Any]]? = nil, headers: [String: String]? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: apiURL) else {
             let urlError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
             completion(.failure(urlError))
@@ -71,22 +71,6 @@ class APICallManager {
                 completion(.failure(noDataError))
                 return
             }
-
-//            if let responseCode = response as? HTTPURLResponse {
-//                if responseCode.statusCode != 200{
-//                    do {
-//                        let decodedResponse = try JSONDecoder().decode(ErrorModel.self, from: data)
-//                        let error = APIError.responseError(decodedResponse.error)
-//                        completion(.failure(error))
-//                        return
-//                    } catch let decodingError {
-//                        completion(.failure(decodingError))
-//                    }
-//                }else{
-//
-//                }
-//            }
-
                 do {
                     let decodedResponse = try JSONDecoder().decode(responseType, from: data)
                     completion(.success(decodedResponse))
@@ -97,4 +81,62 @@ class APICallManager {
         }
         task.resume()
     }
+
+
+    func performMultipartAPIRequest<T: Decodable>(method: HTTPMethod,apiURL: String,parameters: [[String: Any]],responseType: T.Type,completion: @escaping (Result<T, Error>) -> Void) {
+        let boundary = "Boundary-\(UUID().uuidString)"
+        var body = Data()
+        for param in parameters {
+            if param["disabled"] != nil { continue }
+            let paramName = param["key"]!
+            body += Data("--\(boundary)\r\n".utf8)
+            body += Data("Content-Disposition: form-data; name=\"\(paramName)\"".utf8)
+            if param["contentType"] != nil {
+                body += Data("\r\nContent-Type: \(param["contentType"] as! String)\r\n".utf8)
+            }
+            let paramType = param["type"] as! String
+            if paramType == "text" {
+                let paramValue = param["value"] as! String
+                body += Data("\r\n\r\n\(paramValue)\r\n".utf8)
+            } else if paramType == "file" {
+                let filePath = param["src"] as! String
+                let fileURL = URL(fileURLWithPath: filePath)
+                if FileManager.default.fileExists(atPath: fileURL.path) {
+                    let fileData = try? Data(contentsOf: fileURL)
+                    body += Data("; filename=\"\(fileURL.lastPathComponent)\"\r\n".utf8)
+                    body += Data("Content-Type: image/jpeg\r\n\r\n".utf8)
+                    body += fileData ?? Data()
+                    body += Data("\r\n".utf8)
+                } else {
+                    print("File not found at path: \(filePath)")
+                }
+            }
+        }
+        body += Data("--\(boundary)--\r\n".utf8)
+        let postData = body
+        var request = URLRequest(url: URL(string: apiURL)!, timeoutInterval: Double.infinity)
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("Bearer \(AppUserData.shared.token)", forHTTPHeaderField: "Authorization")
+        request.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = method.rawValue
+        request.httpBody = postData
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                let noDataError = NSError(domain: "", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data received"])
+                completion(.failure(noDataError))
+                return
+            }
+            do {
+                let decodedResponse = try JSONDecoder().decode(responseType, from: data)
+                completion(.success(decodedResponse))
+            } catch let decodingError {
+                completion(.failure(decodingError))
+                return
+            }
+        }
+
+        task.resume()
+    }
+
 }

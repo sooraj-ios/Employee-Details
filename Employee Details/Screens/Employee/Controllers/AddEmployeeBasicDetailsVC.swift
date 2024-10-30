@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import MobileCoreServices
-class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentMenuDelegate, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+import UniformTypeIdentifiers
+class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - IBOUTLETS
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var firstNameField: UITextField!
@@ -113,34 +113,28 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentMenuDelegate, UIDoc
         genderButton.showsMenuAsPrimaryAction = true
     }
 
-    // Document picker
-    public func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-        guard let docPath = urls.first else {
-            return
-        }
-        documentPath = docPath.absoluteString
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
+        guard let selectedFileURL = urls.first else { return }
+        documentPath = selectedFileURL.path
         checkValidations()
     }
 
-    public func documentMenu(_ documentMenu:UIDocumentMenuViewController, didPickDocumentPicker documentPicker: UIDocumentPickerViewController) {
-        documentPicker.delegate = self
-        present(documentPicker, animated: true, completion: nil)
-    }
-
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
-        dismiss(animated: true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
-
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        guard let image = info[.editedImage] as? UIImage else { return }
-        let imageName = UUID().uuidString
-        let imagePath = getDocumentsDirectory().appendingPathComponent(imageName)
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-            try? jpegData.write(to: imagePath)
+        picker.dismiss(animated: true, completion: nil)
+        if let image = info[.originalImage] as? UIImage {
+            profileImageView.image = image
+            if let imageUrl = info[.imageURL] as? URL {
+                print("Image URL: \(imageUrl.path)")
+                profileImagePath = imageUrl.path
+            } else {
+                print("Could not get image URL.")
+            }
         }
-        profileImagePath = imagePath.absoluteString
-        profileImageView.image = image
+        self.checkValidations()
         dismiss(animated: true)
     }
 
@@ -155,10 +149,10 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentMenuDelegate, UIDoc
     }
 
     @IBAction func editImageAction(_ sender: UIButton) {
-        let picker = UIImagePickerController()
-        picker.allowsEditing = true
-        picker.delegate = self
-        present(picker, animated: true)
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
 
     @IBAction func fileViewAction(_ sender: UIButton) {
@@ -166,9 +160,10 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentMenuDelegate, UIDoc
     }
 
     @IBAction func uploadFileAction(_ sender: UIButton) {
-        let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item","public.data", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content", "public.text"], in: .import)
-            documentPicker.delegate = self
-            present(documentPicker, animated: true, completion: nil)
+        let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.pdf])
+        documentPicker.delegate = self
+        documentPicker.modalPresentationStyle = .fullScreen
+        present(documentPicker, animated: true, completion: nil)
     }
 
     @IBAction func dobAction(_ sender: UIButton) {
