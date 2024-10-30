@@ -128,17 +128,43 @@ class AddEmployeeBasicDetailsVC: UIViewController, UIDocumentPickerDelegate, UII
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
+
         if let image = info[.originalImage] as? UIImage {
             profileImageView.image = image
-            if let imageUrl = info[.imageURL] as? URL {
-                print("Image URL: \(imageUrl.path)")
-                profileImagePath = imageUrl.path
+            let targetSize = CGSize(width: 300, height: 300)
+            let resizedImage = resizeImage(image: image, targetSize: targetSize)
+            let compressedImageData = resizedImage.jpegData(compressionQuality: 0.5)
+            if let compressedImageData = compressedImageData {
+                let tempDirectory = FileManager.default.temporaryDirectory
+                let fileName = UUID().uuidString + ".jpg"
+                let fileURL = tempDirectory.appendingPathComponent(fileName)
+                do {
+                    try compressedImageData.write(to: fileURL)
+                    print("Image path: \(fileURL.path)")
+                    profileImagePath = fileURL.path
+                } catch {
+                    print("Error saving image to temporary directory: \(error)")
+                }
             } else {
-                print("Could not get image URL.")
+                print("Failed to compress image.")
             }
         }
         self.checkValidations()
         dismiss(animated: true)
+    }
+
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        let newSize = widthRatio > heightRatio ?
+            CGSize(width: size.width * heightRatio, height: size.height * heightRatio) :
+            CGSize(width: size.width * widthRatio, height: size.height * widthRatio)
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: CGRect(origin: .zero, size: newSize))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage ?? image
     }
 
     func getDocumentsDirectory() -> URL {
