@@ -48,9 +48,9 @@ class AddPaymentVC: UIViewController, UITextViewDelegate{
         _ = (dateField.text ?? "") != "" && (amountPercentageField.text ?? "") != "" && (remarkField.text ?? "") != "" ? saveButton.setAsEnabled() : saveButton.setAsDisabled()
     }
 
-    func dateToString(date:Date, neededFormat:String = "dd-MM-yyyy") -> String{
+    func dateToString(date:Date, neededFormat:String = "yyyy-MM-dd") -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd-MM-yyyy"
+        formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: date)
     }
 

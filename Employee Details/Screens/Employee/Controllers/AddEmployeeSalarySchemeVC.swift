@@ -77,13 +77,28 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
      }
 
     @IBAction func contractPeriodButton(_ sender: BorderButton) {
-        setContractPeriodButtonsUI(button: sender)
-        selectedContractPeriod = sender.tag
-        addButton.setTitle("Add Monthly Payment (1/\(sender.tag))", for: .normal)
-        monthlyPaymentsArray = []
-        paymentsTableViewHeight.constant = 0
-        paymentsTableView.reloadData()
-        self.setRemaining()
+        if monthlyPaymentsArray.count > 0{
+            let alert = UIAlertController(title: "Contract Period Change!", message: "This will reset the added payments. Do you want to continue?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+                self.setContractPeriodButtonsUI(button: sender)
+                self.selectedContractPeriod = sender.tag
+                self.addButton.setTitle("Add Monthly Payment (1/\(sender.tag))", for: .normal)
+                self.monthlyPaymentsArray = []
+                self.paymentsTableViewHeight.constant = 0
+                self.paymentsTableView.reloadData()
+                self.setRemaining()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            self.setContractPeriodButtonsUI(button: sender)
+            self.selectedContractPeriod = sender.tag
+            self.addButton.setTitle("Add Monthly Payment (1/\(sender.tag))", for: .normal)
+            self.monthlyPaymentsArray = []
+            self.paymentsTableViewHeight.constant = 0
+            self.paymentsTableView.reloadData()
+            self.setRemaining()
+        }
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
@@ -138,7 +153,7 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
         }
     }
 
-    func stringToDate(dateString: String, neededFormat: String = "dd-MM-yyyy") -> Date {
+    func stringToDate(dateString: String, neededFormat: String = "yyyy-MM-dd") -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = neededFormat
         return formatter.date(from: dateString) ?? Date()
@@ -176,6 +191,7 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
     }
 
     func setRemaining(){
+        remainingPercentageValue = 100
         var remainingSalaryValue = Int(salarySlider.value)
         for item in monthlyPaymentsArray{
             remainingSalaryValue -= item.amount ?? 0
@@ -184,6 +200,23 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
         remainingSalary.setTitle("₹ \(remainingSalaryValue)", for: .normal)
         remainingPercentage.setTitle("\(remainingPercentageValue)%", for: .normal)
         remainingMonths.setTitle("\(selectedContractPeriod - monthlyPaymentsArray.count) Months", for: .normal)
+    }
+
+    @objc func deletePayment(_ sender:UIButton){
+        let alert = UIAlertController(title: "Delete Payment!", message: "Do you want to delete this payment?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in 
+            self.monthlyPaymentsArray.remove(at: sender.tag)
+            self.paymentsTableViewHeight.constant = CGFloat(self.monthlyPaymentsArray.count * 200)
+            self.paymentsTableView.reloadData()
+            self.setRemaining()
+            if self.monthlyPaymentsArray.count == self.selectedContractPeriod{
+                self.addButton.setTitle("Save", for: .normal)
+            }else{
+                self.addButton.setTitle("Add Monthly Payment (\(self.monthlyPaymentsArray.count)/\(self.selectedContractPeriod))", for: .normal)
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 
@@ -200,7 +233,8 @@ class AddEmployeeSalarySchemeVC: UIViewController, UITableViewDelegate, UITableV
         let cellData = monthlyPaymentsArray[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PaymentsTVC_id") as! PaymentsTVC
         cell.setData(data: cellData)
-        cell.deleteButton.isHidden = true
+        cell.deleteButton.tag = indexPath.item
+        cell.deleteButton.addTarget(self, action: #selector(deletePayment(_:)), for: .touchUpInside)
         cell.monthLbl.text = "Month \(indexPath.item + 1)"
         return cell
     }

@@ -127,6 +127,7 @@ class APICallManager {
                 completion(.failure(noDataError))
                 return
             }
+            print(String(data: data, encoding: .utf8)!)
             do {
                 let decodedResponse = try JSONDecoder().decode(responseType, from: data)
                 completion(.success(decodedResponse))
